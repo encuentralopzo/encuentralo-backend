@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Negocios - Encuéntralo PZO</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 600px; background: white; padding: 30px; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; margin-bottom: 20px; }
+        label { font-weight: bold; color: #555; display: block; margin-top: 15px; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        textarea { resize: vertical; height: 80px; }
+        .horario-group { display: flex; gap: 10px; margin-top: 5px; }
+        .horario-group input { margin-top: 0; }
+        button { width: 100%; background-color: #ff9900; color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 25px; transition: 0.3s; }
+        button:hover { background-color: #e68a00; }
+        .help-text { font-size: 12px; color: #777; margin-top: 2px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🚀 Registro Oficial - Encuéntralo PZO</h2>
+    <p style="text-align: center; color: #666;">Completa los datos de tu negocio para unirte al directorio comercial.</p>
+    
+    <form action="/registrar" method="POST" enctype="multipart/form-data">
+        
+        <label>Nombre del Negocio:</label>
+        <input type="text" name="nombre" placeholder="Ej. Hamburguesas El Chamo" required>
+
+        <label>RIF del Negocio:</label>
+        <input type="text" name="rif" placeholder="Ej. J-12345678-9 o V-12345678-0" required>
+
+        <label>Categoría o Rubro:</label>
+        <select name="categoria" required>
+            <option value="">-- Selecciona una opción --</option>
+            <option value="Restaurante / Comida">Restaurante / Comida</option>
+            <option value="Tienda de Ropa / Calzado">Tienda de Ropa / Calzado</option>
+            <option value="Servicios Profesionales">Servicios Profesionales</option>
+            <option value="Repuestos / Automotriz">Repuestos / Automotriz</option>
+            <option value="Heladería / Postres">Heladería / Postres</option>
+            <option value="Víveres / Supermercado">Víveres / Supermercado</option>
+            <option value="Mascotas / Veterinaria">Mascotas / Veterinaria</option>
+            <option value="Otro">Otro rubro comercial</option>
+        </select>
+
+        <label>Productos principales que vende:</label>
+        <textarea name="productos" placeholder="Ej. Hamburguesas, papas fritas, refrescos, carne, pollo..." required></textarea>
+        <div class="help-text">Coloca palabras clave separadas por comas para que la gente te encuentre fácil.</div>
+
+        <label>Dirección Física Exacta (con puntos de referencia):</label>
+        <textarea name="direccion" placeholder="Ej. Alta Vista, Calle Cuchivero, frente al C.C. Macro Centro, Puerto Ordaz." required></textarea>
+
+        <label>Enlace de ubicación en Google Maps:</label>
+        <input type="url" name="maps_url" placeholder="https://maps.app.goo.gl/..." required>
+
+        <label>Enlaces de Redes Sociales:</label>
+        <input type="text" name="redes" placeholder="Ej. Instagram: @tunegocio / Facebook: tunegiciopzo">
+
+        <label>Número de Contacto (WhatsApp):</label>
+        <input type="tel" name="whatsapp" placeholder="Ej. 04141234567" required>
+
+        <label>Horario de Atención (Lunes a Domingo):</label>
+        <input type="text" name="horario" placeholder="Ej. Lunes a Sábado: 8:00 AM - 6:00 PM / Domingos: 10:00 AM - 4:00 PM" required>
+
+        <label>Fotos del Negocio (Fachada e Instalaciones):</label>
+        <input type="file" name="imagenes" multiple accept="image/*" required>
+        <div class="help-text">Puedes seleccionar de 1 a 5 imágenes como máximo.</div>
+
+        <button type="submit">Guardar Registro en Base de Datos</button>
+    </form>
+</div>
+
+</body>
+</html>
