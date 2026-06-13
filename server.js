@@ -102,7 +102,6 @@ app.post('/registrar', upload.array('imagenes', 5), async (req, res) => {
     }
 });
 
-PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`🚀 Sistema de Carga corriendo en: http://localhost:${PORT}`);
 });
